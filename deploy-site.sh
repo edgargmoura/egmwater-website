@@ -26,7 +26,7 @@ npm run build
 
 echo "📦 Uploading to S3..."
 cd dist/
-aws s3 sync . s3://egmwater-site/ --delete
+aws s3 sync . s3://egmwater-site-s3/ --delete
 cd ..
 
 echo "🔄 Invalidating CloudFront cache..."
