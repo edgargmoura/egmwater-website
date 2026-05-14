@@ -5,11 +5,15 @@ import Button from './Button.astro';
 <section class="relative bg-gray-900 text-white overflow-hidden">
   <!-- Background image with overlay -->
   <div class="absolute inset-0 z-0">
-    <img 
-      src="/eta.png" 
+    <video 
+      src="/eta_egmwater.mp4" 
       alt="Water treatment facility" 
       class="w-full h-full object-cover"
-    />
+      autoplay
+      muted
+      playsinline
+      preload="auto"
+    ></video>
     <div class="absolute inset-0 bg-gradient-to-r from-primary-800/70 to-primary-800/70"></div>
   </div>
   
