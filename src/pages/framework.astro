@@ -1,0 +1,313 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import Button from '../components/Button.astro';
+import WaveBotton from '../components/WaveBotton.astro';
+---
+
+<Layout
+  title="EGM Water Operational Framework"
+  description="A practical, adaptable framework for water utility operational improvement — covering monitoring, efficiency, automation, and continuous improvement."
+>
+
+  <!-- ─── Hero ─────────────────────────────────────────────── -->
+  <section class="bg-gray-900 text-white py-24 relative overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <video 
+        src="/egm_instit_framework.mp4" 
+        alt="Modern water utility operations" 
+        class="w-full h-full object-cover"
+        autoplay
+        playsinline
+        muted
+        preload="auto"
+      ></video>
+      <div class="absolute inset-0 bg-gradient-to-r from-primary-900/80 to-primary-800/60"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-24 md:py-36">
+      <div class="max-w-3xl" data-aos="fade-up">
+        <p class="text-primary-300 font-medium uppercase tracking-widest text-sm mb-4">Methodology</p>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">EGM Water Operational Framework</h1>
+        <p class="text-xl text-gray-300">
+          A Practical Framework for Water Utility Operational Improvement
+        </p>
+      </div>
+    </div>
+    <WaveBotton class="absolute bottom-0 left-0 right-0 text-white" />
+  </section>
+
+  <!-- ─── What is the Framework? ───────────────────────────── -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+
+        <div data-aos="fade-right">
+          <SectionHeading
+            title="What is the EGM Water Operational Framework?"
+            subtitle=""
+          />
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            The EGM Water Operational Framework is a structured, practical approach developed to help water utilities identify operational gaps, prioritize improvements, and implement effective changes — grounded in real-world operational experience rather than theoretical models.
+          </p>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            It bridges the gap between operational knowledge and structured methodology, providing a clear path from diagnosis to sustainable improvement without prescribing a single "one-size-fits-all" solution.
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            Whether the challenge is water loss, inadequate monitoring, operational inefficiency, or readiness for automation, the framework provides the structure to address it systematically.
+          </p>
+        </div>
+
+        <div class="relative" data-aos="fade-left">
+          <img
+            src="/egm-water-framework.png"
+            alt="EGM Water Operational Framework diagram"
+            class="rounded-xl shadow-xl w-full"
+          />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Core Principle ───────────────────────────────────── -->
+  <section class="py-16 bg-primary-600">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-primary-200 font-medium uppercase tracking-widest text-sm mb-4" data-aos="fade-up">Core Principle</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-10" data-aos="fade-up" data-aos-delay="100">
+        The Continuous Improvement Cycle
+      </h2>
+
+      <!-- Cycle steps -->
+      <div class="flex flex-wrap justify-center items-center gap-2 md:gap-0" data-aos="fade-up" data-aos-delay="200">
+        {[
+          { label: 'Understand', icon: '🔍' },
+          { label: 'Assess',     icon: '📊' },
+          { label: 'Prioritize', icon: '🎯' },
+          { label: 'Improve',    icon: '🔧' },
+          { label: 'Verify',     icon: '✅' },
+          { label: 'Learn',      icon: '📘' },
+          { label: 'Repeat',     icon: '🔄' },
+        ].map((step, i, arr) => (
+          <div class="flex items-center">
+            <div class="flex flex-col items-center bg-white/10 backdrop-blur rounded-xl px-5 py-4 min-w-[90px]">
+              <span class="text-2xl mb-1">{step.icon}</span>
+              <span class="text-white font-semibold text-sm">{step.label}</span>
+            </div>
+            {i < arr.length - 1 && (
+              <svg class="hidden md:block h-5 w-5 text-primary-300 mx-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            )}
+          </div>
+        ))}
+      </div>
+
+      <p class="text-primary-100 mt-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="300">
+        Each cycle builds on the previous one, generating operational knowledge and progressively raising the maturity level of the utility.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── Six Stages ───────────────────────────────────────── -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="Six Stages of the Framework"
+        subtitle="Each stage has a defined purpose, expected inputs, key activities, and measurable outputs."
+        centered={true}
+      />
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
+
+        <!-- Stage 1 -->
+        <div class="bg-white rounded-xl p-6 shadow-sm border-t-4 border-primary-500 hover:shadow-md transition-shadow duration-300" data-aos="fade-up">
+          <div class="flex items-center mb-4">
+            <span class="w-9 h-9 rounded-full bg-primary-100 text-primary-700 font-bold text-sm flex items-center justify-center mr-3 flex-shrink-0">01</span>
+            <h3 class="text-lg font-bold text-gray-900">Understand</h3>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Gather comprehensive knowledge about how the utility actually operates — infrastructure, data flows, operational routines, constraints, and available resources. This stage avoids assumptions and establishes the factual baseline.
+          </p>
+        </div>
+
+        <!-- Stage 2 -->
+        <div class="bg-white rounded-xl p-6 shadow-sm border-t-4 border-secondary-500 hover:shadow-md transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-center mb-4">
+            <span class="w-9 h-9 rounded-full bg-secondary-100 text-secondary-700 font-bold text-sm flex items-center justify-center mr-3 flex-shrink-0">02</span>
+            <h3 class="text-lg font-bold text-gray-900">Assess</h3>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Evaluate current operational performance against relevant benchmarks and internal targets. Identify gaps, risks, and inefficiencies across operational areas — from monitoring coverage to water loss levels.
+          </p>
+        </div>
+
+        <!-- Stage 3 -->
+        <div class="bg-white rounded-xl p-6 shadow-sm border-t-4 border-accent-500 hover:shadow-md transition-shadow duration-300" data-aos="fade-up" data-aos-delay="200">
+          <div class="flex items-center mb-4">
+            <span class="w-9 h-9 rounded-full bg-accent-100 text-accent-700 font-bold text-sm flex items-center justify-center mr-3 flex-shrink-0">03</span>
+            <h3 class="text-lg font-bold text-gray-900">Prioritize</h3>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Rank improvement opportunities based on operational impact, feasibility, available resources, and strategic alignment. Focus energy where it will produce the highest operational return.
+          </p>
+        </div>
+
+        <!-- Stage 4 -->
+        <div class="bg-white rounded-xl p-6 shadow-sm border-t-4 border-primary-400 hover:shadow-md transition-shadow duration-300" data-aos="fade-up" data-aos-delay="50">
+          <div class="flex items-center mb-4">
+            <span class="w-9 h-9 rounded-full bg-primary-50 text-primary-600 font-bold text-sm flex items-center justify-center mr-3 flex-shrink-0">04</span>
+            <h3 class="text-lg font-bold text-gray-900">Improve</h3>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Design and implement targeted operational improvements — from procedural adjustments and training to monitoring upgrades, automation, or process redesign — tailored to the utility's specific context.
+          </p>
+        </div>
+
+        <!-- Stage 5 -->
+        <div class="bg-white rounded-xl p-6 shadow-sm border-t-4 border-secondary-400 hover:shadow-md transition-shadow duration-300" data-aos="fade-up" data-aos-delay="150">
+          <div class="flex items-center mb-4">
+            <span class="w-9 h-9 rounded-full bg-secondary-50 text-secondary-600 font-bold text-sm flex items-center justify-center mr-3 flex-shrink-0">05</span>
+            <h3 class="text-lg font-bold text-gray-900">Verify</h3>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Measure and confirm whether improvements achieved their intended outcomes. Use data to validate changes and detect unintended effects before moving forward.
+          </p>
+        </div>
+
+        <!-- Stage 6 -->
+        <div class="bg-white rounded-xl p-6 shadow-sm border-t-4 border-accent-400 hover:shadow-md transition-shadow duration-300" data-aos="fade-up" data-aos-delay="250">
+          <div class="flex items-center mb-4">
+            <span class="w-9 h-9 rounded-full bg-accent-50 text-accent-600 font-bold text-sm flex items-center justify-center mr-3 flex-shrink-0">06</span>
+            <h3 class="text-lg font-bold text-gray-900">Learn & Repeat</h3>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Document results, consolidate lessons learned, and feed knowledge back into the next improvement cycle. Operational maturity grows iteratively — each cycle builds on the last.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Areas of Application ─────────────────────────────── -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="Areas of Application"
+        subtitle="The framework applies across the full spectrum of water utility operations."
+        centered={true}
+      />
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+        {[
+          { label: 'Water Treatment Operations',        icon: '💧' },
+          { label: 'Pumping Stations',                  icon: '⚙️' },
+          { label: 'Reservoir Operations',              icon: '🏞️' },
+          { label: 'Distribution Systems',              icon: '🗺️' },
+          { label: 'Operational Monitoring',            icon: '📡' },
+          { label: 'Water Loss & Efficiency',           icon: '📉' },
+          { label: 'Water Scarcity / Operational Stress', icon: '⚠️' },
+          { label: "Technology's Role",                 icon: '🔌' },
+        ].map((area, i) => (
+          <div
+            class="bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:border-primary-300 hover:shadow-md transition-all duration-300 flex flex-col items-center text-center"
+            data-aos="fade-up"
+            data-aos-delay={`${(i % 4) * 75}`}
+          >
+            <span class="text-3xl mb-3">{area.icon}</span>
+            <span class="text-gray-800 font-medium text-sm leading-snug">{area.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Technology's Role ─────────────────────────────────── -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto" data-aos="fade-up">
+        <SectionHeading
+          title="Technology's Role"
+          subtitle="A tool, not a purpose."
+          centered={true}
+        />
+        <div class="bg-white rounded-xl p-8 shadow-sm border-l-4 border-primary-500">
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Technology — sensors, SCADA, automation, data analytics — plays an important role in modern water utility operations. But within the EGM Water Operational Framework, technology is always positioned as a means to an operational end, not as the goal itself.
+          </p>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            A utility with mature operational processes and clear monitoring objectives will use technology effectively. A utility that acquires technology without operational clarity will not realize its potential — regardless of the sophistication of the tools.
+          </p>
+          <p class="text-gray-700 leading-relaxed font-medium text-primary-700">
+            The framework ensures that operational understanding and clear priorities precede any technology recommendation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Adaptable, Not Prescriptive ─────────────────────── -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+
+        <div data-aos="fade-right">
+          <p class="text-primary-600 font-medium uppercase tracking-widest text-sm mb-3">A Key Distinction</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Adaptable, Not Prescriptive</h2>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            The framework does not prescribe identical solutions for every utility. Each application must consider the utility's infrastructure, operational conditions, available resources, regulatory environment, and technical requirements.
+          </p>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            This is a deliberate design choice. Water utilities vary enormously — in size, age, geography, data availability, staffing, budget, and regulatory context. A framework that ignores these differences produces generic recommendations that fail at implementation.
+          </p>
+          <p class="text-gray-700 font-medium leading-relaxed bg-primary-50 border-l-4 border-primary-500 p-4 rounded-r-lg">
+            The EGM Water Operational Framework provides the structure. The specific pathway through that structure is determined by the utility's actual conditions — not by a preset formula.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4" data-aos="fade-left">
+          {[
+            { heading: 'Infrastructure',         body: 'Age, layout, and condition of assets directly shape what improvements are feasible.' },
+            { heading: 'Operational Conditions', body: 'Current performance, staffing capacity, and data availability define the starting point.' },
+            { heading: 'Available Resources',    body: 'Budgetary and human resources determine the scope and sequence of improvements.' },
+            { heading: 'Regulatory Environment', body: 'Compliance requirements and reporting obligations inform priorities and timelines.' },
+          ].map((card, i) => (
+            <div
+              class="bg-gray-50 rounded-xl p-5 border border-gray-200 hover:border-primary-300 hover:shadow-sm transition-all duration-300"
+              data-aos="fade-up"
+              data-aos-delay={`${i * 75}`}
+            >
+              <h4 class="text-sm font-bold text-primary-700 mb-2">{card.heading}</h4>
+              <p class="text-gray-600 text-sm leading-relaxed">{card.body}</p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA ──────────────────────────────────────────────── -->
+  <section class="bg-primary-600 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold text-white mb-4" data-aos="fade-up">
+        Interested in discussing how the framework could apply to your utility?
+      </h2>
+      <p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+        Every utility is different. Let's start with understanding yours.
+      </p>
+      <div data-aos="fade-up" data-aos-delay="200">
+        <Button
+          href="/contact#consultation"
+          variant="outline"
+          size="lg"
+          class="border-white text-white hover:bg-white hover:text-primary-600 font-medium"
+        >
+          Request Consultation
+        </Button>
+      </div>
+    </div>
+  </section>
+
+</Layout>

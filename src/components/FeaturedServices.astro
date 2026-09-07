@@ -4,46 +4,32 @@ import ServiceCard from './ServiceCard.astro';
 
 const services = [
   {
-    title: 'Environmental Consulting',
-    description: 'Specialized analysis, diagnostics, and recommendations for environmental compliance and resource optimization.',
-    image: '/consultoria_ambiental.png',
-    url: '/services#consulting',
-    highlight: 'gray'
-  },
-  {
-    title: 'Infrastructure Projects',
-    description: 'Planning, execution, and management of infrastructure projects focused on sustainability and efficiency.',
-    image: '/projetos_infraestrutura.png',
+    title: 'Operational Assessment & Optimization',
+    description: 'Structured assessment of water utility operations to identify operational limitations, monitoring gaps, recurring issues, and practical improvement opportunities.',
+    image: '/projetos_infraestrutura-4.png',
     url: '/services#infrastructure',
     highlight: 'slate'
   },
   {
-    title: 'Green Technologies',
-    description: 'Development and implementation of sustainable technologies such as biofiltration, water reuse, and renewable energy.',
+    title: 'Automation & Operational Monitoring',
+    description: 'Evaluation and improvement of monitoring and automation strategies to support operational visibility, timely response, and more consistent decision-making.',
+    image: '/automação_monitoramento.png',
+    url: '/services#automation',
+    highlight: 'gray'
+  },
+  {
+    title: 'Water Loss & Operational Efficiency',
+    description: 'Operational assessment focused on identifying opportunities to improve system efficiency, monitoring practices, pressure-related operations, and water-loss management.',
     image: '/tecnologias_verdes.png',
     url: '/services#technologies',
     highlight: 'zinc'
   },
   {
-    title: 'Education & Training',
-    description: 'Educational programs, workshops, and specialized courses in sanitation and environmental engineering.',
+    title: ' Operational Consulting & Knowledge Transfer',
+    description: 'Practical consulting, documentation, and training support designed to strengthen operational procedures, staff knowledge, and continuous improvement practices.',
     image: 'https://images.pexels.com/photos/1181533/pexels-photo-1181533.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&dpr=1',
     url: '/education',
     highlight: 'stone'
-  },
-  {
-    title: 'Research & Development',
-    description: 'Innovations in water and wastewater treatment, focusing on energy efficiency and sustainability.',
-    image: 'https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&dpr=1',
-    url: '/services#research',
-    highlight: 'neutral'
-  },
-  {
-    title: 'Automation & Monitoring',
-    description: 'Intelligent IoT systems for remote monitoring and efficient control of treatment plants.',
-    image: '/automação_monitoramento.png',
-    url: '/services#automation',
-    highlight: 'gray'
   },
 ];
 ---
@@ -52,11 +38,11 @@ const services = [
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <SectionHeading 
       title="Our Services" 
-      subtitle="Integrated solutions in sanitary and environmental engineering for various sectors and needs"
+      subtitle="Practical operational services designed to help water utilities improve visibility, efficiency, reliability, and decision-making."
       centered={true}
     />
     
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
       {services.map((service, index) => (
         <ServiceCard 
           title={service.title}
