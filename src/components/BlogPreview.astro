@@ -3,28 +3,28 @@ import SectionHeading from './SectionHeading.astro';
 
 const articles = [
   {
-    title: "How IoT is revolutionizing water quality monitoring",
-    excerpt: "Connected sensors enable real-time monitoring and more efficient decision-making for water resource preservation.",
-    date: "April 9, 2025",
+    title: "Online Water Quality Monitoring Resources",
+    excerpt: "Guidance and technical resources on real-time monitoring in source waters and distribution systems, including operational control and event detection.",
     image: "blog_iot.png",
-    category: "Technology",
-    url: "https://www.waterhub.com.br/post/a-nova-era-do-tratamento-de-%C3%A1gua-intelig%C3%AAncia-artificial-e-iot-no-monitoramento-de-sistemas-h%C3%ADdricos"
+    category: "Monitoring",
+    source: "U.S. EPA",
+    url: "https://www.epa.gov/waterresilience/online-water-quality-monitoring-resources"
   },
   {
-    title: "Biofilters: the natural solution for industrial wastewater treatment",
-    excerpt: "Biofiltration systems combine treatment efficiency with low operational cost and minimal environmental impact.",
-    date: "April 14, 2025",
-    image: "/blog_biofiltro.png",
-    category: "Sustainability",
-    url: "https://phsolucoesambientais.com.br/saneamento-basico/o-que-e-um-biofiltro-e-qual-sua-funcao-no-tratamento-de-esgoto/"
+    title: "Effective Water Utility Management Practices",
+    excerpt: "Tools and guidance for assessing utility operations, setting priorities, measuring performance, and supporting continuous improvement.",
+    image: "/eta.png",
+    category: "Utility Management",
+    source: "U.S. EPA",
+    url: "https://www.epa.gov/sustainable-water-infrastructure/effective-water-utility-management-practices"
   },
   {
-    title: "Rust Inhibitors for Boilers: Key Components Explained",
-    excerpt: "Preventing rust isn't just about adding chemicals. It's about using the right corrosion inhibitor for your system conditions.",
-    date: "May 5, 2025",
-    image: "/blog_operando_caldeira.png",
-    category: "Knowledge",
-    url: "https://go2eti.com/blog/boiler-rust-inhibitor/"
+    title: "Water Efficiency and Conservation Resources for Drinking Water Systems",
+    excerpt: "Resources on water audits, distribution-system losses, conservation, and practical efficiency measures for public water systems.",
+    image: "/tecnologias_verdes.png",
+    category: "Water Efficiency",
+    source: "U.S. EPA",
+    url: "https://www.epa.gov/dwcapacity/water-efficiency-and-conservation-resources-small-drinking-water-systems"
   }
 ];
 ---
@@ -33,7 +33,7 @@ const articles = [
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <SectionHeading 
       title="Knowledge Center" 
-      subtitle="Insights on water utility operations, monitoring, automation, efficiency, water-loss management, and continuous improvement."
+      subtitle="Selected external reading on water utility operations, monitoring, treatment, efficiency, and continuous improvement."
       centered={true}
     />
     
@@ -53,7 +53,7 @@ const articles = [
             </div>
             
             <div class="p-6 flex-grow">
-              <p class="text-sm text-gray-500 mb-2">{article.date}</p>
+              <p class="text-sm font-medium text-primary-700 mb-2">External reading · {article.source}</p>
               <h3 class="text-xl font-semibold mb-3 text-gray-900 group-hover:text-primary-600 transition-colors">
                 {article.title}
               </h3>

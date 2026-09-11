@@ -2,17 +2,17 @@
 const currentYear = new Date().getFullYear();
 
 const services = [
-  { name: 'Operational Assessment & Optimization', url: '#services' },
-  { name: 'Automation & Operational Monitoring', url: '#services' },
-  { name: 'Water Loss & Operational Efficiency', url: '#services' },
-  { name: 'Operational Consulting & Knowledge Transfer', url: '#services' }
+  { name: 'Operational Assessment & Optimization', url: '/#services' },
+  { name: 'Automation & Operational Monitoring', url: '/#services' },
+  { name: 'Water Loss & Operational Efficiency', url: '/#services' },
+  { name: 'Operational Consulting & Knowledge Transfer', url: '/#services' }
 ];
 
 const locations = [
-  { name: 'Austin', url: 'https://maps.app.goo.gl/1vYwSRmnxapfYg7x9' },
-  { name: 'Dallas', url: 'https://maps.app.goo.gl/kZoXBCZWjokkbPBZ9' },
-  { name: 'Alabama', url: 'https://maps.app.goo.gl/idfY9FZ6jKF8Wzkw7' },
+  { name: 'Austin Metropolitan Area', url: 'https://maps.app.goo.gl/1vYwSRmnxapfYg7x9' },
+  { name: 'Dallas–Fort Worth Metropolitan Area', url: 'https://maps.app.goo.gl/kZoXBCZWjokkbPBZ9' },
   { name: 'Louisiana', url: 'https://maps.app.goo.gl/naBapEvS6LAm6ACS6' },
+  { name: 'Alabama', url: 'https://maps.app.goo.gl/idfY9FZ6jKF8Wzkw7' },
 ];
 
 const socialLinks = [
@@ -51,7 +51,7 @@ const socialLinks = [
       <div class="flex flex-col">
         <h3 class="text-lg font-semibold mb-4">EGM Water TechSol</h3>
         <p class="text-gray-400 mb-4 text-sm flex-grow">
-          Practical Operational Solutions for Water Utilities and Technological solutions for a cleaner and more sustainable future.
+          Practical Operational Solutions for Water Utilities.
         </p>
         <div class="flex space-x-4 mt-6">
           {socialLinks.map(social => (
@@ -111,12 +111,8 @@ const socialLinks = [
     
     <!-- Bottom bar -->
     <div class="mt-12 pt-2 border-t border-gray-800 text-sm text-gray-400">
-      <div class="flex flex-col md:flex-row justify-between items-center">
+      <div class="flex justify-center items-center text-center">
         <p>&copy; {currentYear} EGM Water TechSol. All rights reserved.</p>
-        <div class="flex space-x-6 mt-4 md:mt-0">
-          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Privacy Policy</a>
-          <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Terms of Service</a>
-        </div>
       </div>
     </div>
   </div>

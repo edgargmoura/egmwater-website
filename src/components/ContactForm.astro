@@ -81,14 +81,14 @@
       
       <div class="flex items-start mb-6">
         <input 
-          id="privacy" 
-          name="privacy" 
+          id="contact-consent"
+          name="consent"
           type="checkbox" 
           required
           class="h-4 w-4 rounded border-gray-300 text-primary-600 focus:ring-primary-500 mt-1"
         >
-        <label for="privacy" class="ml-3 block text-sm text-gray-600">
-          I agree to the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-500 underline">Privacy Policy</a> and consent to the processing of my personal data for the purpose of responding to my inquiry. *
+        <label for="contact-consent" class="ml-3 block text-sm text-gray-600">
+          I agree that EGM Water TechSol may use the information provided to respond to my inquiry. *
         </label>
       </div>
       
@@ -100,7 +100,7 @@
           </svg>
           <div class="ml-3">
             <p class="text-sm font-medium text-green-800">
-              Thank you for your message! We'll get back to you within 24 hours.
+              Thank you for your message. Your inquiry has been received, and we will respond as soon as possible.
             </p>
           </div>
         </div>
@@ -169,14 +169,14 @@
           // Validate required fields
           const name = formData.get('name') as string;
           const email = formData.get('email') as string;
-          const privacy = formData.get('privacy');
+          const consent = formData.get('consent');
           
           if (!name || !email) {
             throw new Error('Please fill in all required fields (Name and Email).');
           }
           
-          if (!privacy) {
-            throw new Error('You must accept the Privacy Policy to continue.');
+          if (!consent) {
+            throw new Error('You must consent to the use of your information so we can respond.');
           }
           
           // Prepare data for submission

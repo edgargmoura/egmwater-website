@@ -81,9 +81,25 @@ export default {
           700: '#15803d',
           800: '#166534',
           900: '#14532d',
+        },
+        accent: {
+          50: '#f0f9e6',
+          100: '#e1f3cc',
+          200: '#c3e799',
+          300: '#a5db66',
+          400: '#87cf33',
+          500: '#69c300',
+          600: '#549c00',
+          700: '#3f7500',
+          800: '#2a4e00',
+          900: '#152700',
         }
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        heading: ['Montserrat', 'system-ui', 'sans-serif'],
       }
     },
   },
   plugins: [],
-}
+};

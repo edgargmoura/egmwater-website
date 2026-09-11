@@ -3,18 +3,64 @@ import Layout from '../layouts/Layout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import ContactForm from '../components/ContactForm.astro';
 import WaveBotton from '../components/WaveBotton.astro';
+
+const serviceAreas = [
+  {
+    location: 'Austin Metropolitan Area, Texas',
+    status: 'Planned initial U.S. service area',
+  },
+  {
+    location: 'Dallas–Fort Worth Metropolitan Area, Texas',
+    status: 'Planned service area',
+  },
+  {
+    location: 'Louisiana',
+    status: 'Planned service area',
+  },
+  {
+    location: 'Alabama',
+    status: 'Planned service area',
+  },
+];
+
+const faqs = [
+  {
+    question: 'What happens after I submit a consultation request?',
+    answer:
+      'We review the information provided and follow up to clarify the operational context, objectives, available information, and appropriate next step. Any scope, schedule, responsibilities, and fees are confirmed separately in writing.',
+  },
+  {
+    question: 'How does the consulting process work?',
+    answer:
+      'An engagement generally begins with information exchange and scope definition, followed by operational assessment, prioritization, written findings, and — when agreed — implementation support and follow-up verification. Activities vary according to the utility and the assignment.',
+  },
+  {
+    question: 'Who can EGM Water TechSol serve?',
+    answer:
+      'Services are available to public and private water-sector organizations. Each potential engagement is evaluated according to scope, operational needs, available information, professional requirements, and scheduling.',
+  },
+  {
+    question: 'Does EGM Water TechSol provide engineering services?',
+    answer:
+      'EGM Water TechSol focuses on operational assessment, decision support, monitoring strategy, operational efficiency, documentation, and knowledge transfer. Engineering design, professional engineering services, regulated approvals, cybersecurity work, and other specialized services must be performed or approved by appropriately qualified and authorized professionals.',
+  },
+  {
+    question: 'How is knowledge-transfer support delivered?',
+    answer:
+      'Support may include workshops, operating-procedure reviews, documentation, and remote or on-site training within an agreed engagement. Format, materials, responsibilities, and any completion documentation are defined in the scope.',
+  },
+];
 ---
 
-<Layout 
-  title="Contact | EGM Water TechSol"
+<Layout
+  title="Contact"
   description="Contact EGM Water TechSol to discuss water utility operational assessment, monitoring, automation, efficiency, or the EGM Water Operational Framework."
 >
-  <!-- Hero Section -->
   <section class="bg-gray-900 text-white py-24 relative overflow-hidden">
     <div class="absolute inset-0 z-0">
-      <video 
-        src="/typing.mp4" 
-        alt="Modern office" 
+      <video
+        src="/typing.mp4"
+        aria-label="Modern office"
         class="w-full h-full object-cover"
         autoplay
         playsinline
@@ -23,7 +69,7 @@ import WaveBotton from '../components/WaveBotton.astro';
       ></video>
       <div class="absolute inset-0 bg-gradient-to-r from-primary-800/70 to-primary-800/70"></div>
     </div>
-    
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-24 md:py-36">
       <div class="max-w-3xl" data-aos="fade-up">
         <h1 class="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
@@ -35,266 +81,129 @@ import WaveBotton from '../components/WaveBotton.astro';
     <WaveBotton />
   </section>
 
-  <!-- Contact Information -->
   <section class="py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-3 gap-8">
-        <!-- Contact Card: Phone -->
         <div class="bg-white rounded-xl p-8 shadow-sm border-l-4 border-slate-500 hover:shadow-md transition-shadow duration-300" data-aos="fade-up">
           <div class="flex items-center mb-6">
-            <div class="w-14 h-14 rounded-lg bg-slate-100 flex items-center justify-center mr-4">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            <div class="w-14 h-14 rounded-lg bg-slate-100 flex items-center justify-center mr-4 flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 4v-4z" />
               </svg>
             </div>
-            <h3 class="text-2xl font-bold text-slate-700">Phone</h3>
+            <h2 class="text-2xl font-bold text-slate-700">Consultation Requests</h2>
           </div>
-          
-          <div class="space-y-4">
-            <div>
-              <p class="text-slate-600 text-sm font-medium mb-1">Main Office:</p>
-              <p class="text-xl font-semibold text-slate-800">(512) xxx-xxxx</p>
-            </div>
-            
-            <div>
-              <p class="text-slate-600 text-sm font-medium mb-1">Technical Support:</p>
-              <p class="text-xl font-semibold text-slate-800">(512) xxx-xxxx</p>
-            </div>
-          </div>
+          <p class="text-slate-600 mb-5">
+            Share the operational topic, objective, or question you would like to discuss through the consultation form.
+          </p>
+          <a href="#consultation" class="inline-flex items-center font-medium text-primary-600 hover:text-primary-700">
+            Go to the form
+            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </a>
         </div>
-        
-        <!-- Contact Card: Email -->
+
         <div class="bg-white rounded-xl p-8 shadow-sm border-l-4 border-stone-500 hover:shadow-md transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
           <div class="flex items-center mb-6">
-            <div class="w-14 h-14 rounded-lg bg-stone-100 flex items-center justify-center mr-4">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-stone-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div class="w-14 h-14 rounded-lg bg-stone-100 flex items-center justify-center mr-4 flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-stone-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
             </div>
-            <h3 class="text-2xl font-bold text-stone-700">Email</h3>
+            <h2 class="text-2xl font-bold text-stone-700">Email</h2>
           </div>
-          
-          <div class="space-y-4">
-            <div>
-              <p class="text-stone-600 text-sm font-medium mb-1">General Information:</p>
-              <p class="text-xl font-semibold text-stone-800">contact@egmwater.com</p>
-            </div>
-            
-            <div>
-              <p class="text-stone-600 text-sm font-medium mb-1">Business Proposals:</p>
-              <p class="text-xl font-semibold text-stone-800">contact@egmwater.com</p>
-            </div>
-          </div>
+          <p class="text-stone-600 text-sm font-medium mb-2">General and business inquiries:</p>
+          <a href="mailto:contact@egmwater.com" class="break-all text-xl font-semibold text-stone-800 hover:text-primary-600">
+            contact@egmwater.com
+          </a>
         </div>
-        
-        <!-- Contact Card: Location -->
+
         <div class="bg-white rounded-xl p-8 shadow-sm border-l-4 border-zinc-500 hover:shadow-md transition-shadow duration-300" data-aos="fade-up" data-aos-delay="200">
           <div class="flex items-center mb-6">
-            <div class="w-14 h-14 rounded-lg bg-zinc-100 flex items-center justify-center mr-4">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-zinc-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div class="w-14 h-14 rounded-lg bg-zinc-100 flex items-center justify-center mr-4 flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-zinc-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
             </div>
-            <h3 class="text-2xl font-bold text-zinc-700">Main Office</h3>
+            <h2 class="text-2xl font-bold text-zinc-700">Initial U.S. Market Focus</h2>
           </div>
-          
-          <div class="space-y-4">
-            <div>
-              <p class="text-zinc-600 text-sm font-medium mb-1">Address:</p>
-              <p class="text-lg font-semibold text-zinc-800">
-                Planned U.S. Operations<br>
-                Austin Metropolitan Area<br>
-                Texas
-                <br>
-                
-              </p>
-            </div>
-            
-            <div>
-              <p class="text-zinc-600 text-sm font-medium mb-1">Business Hours:</p>
-              <p class="text-lg font-semibold text-zinc-800">
-                Monday to Friday: 8:00 AM - 6:00 PM
-              </p>
-            </div>
-            
-            <a 
-              href="https://maps.app.goo.gl/ny1LfLswehb5iq947" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              class="inline-flex items-center text-zinc-600 hover:text-zinc-800 font-medium transition-colors duration-200"
-            >
-              View on map
-              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg>
-            </a>
-          </div>
+          <p class="text-lg font-semibold text-zinc-800 mb-2">Austin Metropolitan Area, Texas</p>
+          <p class="text-zinc-600">Planned starting point for U.S. operations.</p>
         </div>
       </div>
     </div>
   </section>
-  
-  <!-- Contact Form -->
-  <section class="py-20 bg-gray-50" id="consultation">
+
+  <section class="py-20 bg-gray-50 scroll-mt-24" id="consultation">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <SectionHeading 
-        title="Request a Consultation" 
-        subtitle="Fill out the form below and we will respond as soon as possible."
+      <SectionHeading
+        title="Request a Consultation"
+        subtitle="Provide a brief description of the operational topic or question, and we will respond as soon as possible."
         centered={true}
       />
-      
       <ContactForm />
     </div>
   </section>
-  
-  <!-- Map Section -->
+
   <section class="py-20">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <SectionHeading 
-        title="Our Offices" 
-        subtitle="We are present in four strategic locations to serve you"
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="Planned Service Areas"
+        subtitle="The planned U.S. service footprint begins in Texas and includes selected neighboring markets."
         centered={true}
       />
-      
-      <div class="mt-12 aspect-video rounded-xl overflow-hidden shadow-lg" data-aos="fade-up">
-        <!-- This would typically be an iframe with Google Maps, but for this example, we'll use an image placeholder -->
-        <img 
-          src="/nossos_escritorios.png" 
-          alt="Map of EGM Water TechSol offices" 
-          class="w-full h-full object-cover"
-        />
-      </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-        <!-- Austin Office -->
-        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100" data-aos="fade-up">
-          <h3 class="text-xl font-semibold mb-2 text-gray-900">Planned U.S. Operations</h3>
-          <p class="text-gray-600 mb-4">
-            Austin Metropolitan Area, Texas
-          </p>
-          <a href="https://maps.app.goo.gl/ny1LfLswehb5iq947" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 font-medium inline-flex items-center">
-            View on map
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-            </svg>
-          </a>
-        </div>
-        
-        <!-- Dallas Office -->
-        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100" data-aos="fade-up" data-aos-delay="100">
-          <h3 class="text-xl font-semibold mb-2 text-gray-900">Dallas–Fort Worth Metropolitan Area, Texas</h3>
-          <p class="text-gray-600 mb-4">
-            Planned Service Area<br>
-         
-          </p>
-          <a href="https://maps.app.goo.gl/Pu9U1TkJeMomDNuc6" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 font-medium inline-flex items-center">
-            View on map
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-            </svg>
-          </a>
-        </div>
-        
-        <!-- Alabama Office -->
-        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100" data-aos="fade-up" data-aos-delay="200">
-          <h3 class="text-xl font-semibold mb-2 text-gray-900">Louisiana</h3>
-          <p class="text-gray-600 mb-4">
-            Planned Service Area<br>
-            
-          </p>
-          <a href="https://maps.app.goo.gl/viC9pTnKSGkBomD87" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 font-medium inline-flex items-center">
-            View on map
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-            </svg>
-          </a>
-        </div>
-        
-        <!-- Louisiana Office -->
-        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100" data-aos="fade-up" data-aos-delay="300">
-          <h3 class="text-xl font-semibold mb-2 text-gray-900">Alabama</h3>
-          <p class="text-gray-600 mb-4">
-            Planned Service Area<br>
-            
-          </p>
-          <a href="https://maps.app.goo.gl/p17DGH15rY5Caoij6" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 font-medium inline-flex items-center">
-            View on map
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-            </svg>
-          </a>
-        </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+        {serviceAreas.map((area, index) => (
+          <div
+            class="bg-white p-6 rounded-xl shadow-sm border border-gray-100"
+            data-aos="fade-up"
+            data-aos-delay={index * 100}
+          >
+            <div class="w-10 h-10 rounded-full bg-primary-50 text-primary-600 flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-3 text-gray-900">{area.location}</h3>
+            <p class="text-sm font-medium text-primary-700">{area.status}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
-  
-  <!-- FAQ Section -->
+
   <section class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <SectionHeading 
-        title="Frequently Asked Questions" 
-        subtitle="Answers to the most common questions about our services and processes"
+      <SectionHeading
+        title="Frequently Asked Questions"
+        subtitle="Practical information about consultations, services, and professional responsibilities."
         centered={true}
       />
-      
+
       <div class="max-w-3xl mx-auto mt-12">
         <div class="space-y-6">
-          <div class="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden" data-aos="fade-up">
-            <button class="faq-button flex justify-between items-center w-full px-6 py-4 text-left hover:bg-gray-50 transition-colors duration-200">
-              <span class="text-lg font-medium text-gray-900">What is the average timeframe for project development?</span>
-              <svg class="faq-icon h-5 w-5 text-gray-500 transform transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            <div class="faq-content hidden px-6 pb-4">
-              <p class="text-gray-600">
-                The timeframe varies according to the complexity and scope of the project. During the initial consultation, we provide a detailed timeline with clear delivery milestones.
-              </p>
+          {faqs.map((faq, index) => (
+            <div class="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden" data-aos="fade-up">
+              <button
+                type="button"
+                class="faq-button flex justify-between items-center gap-4 w-full px-6 py-4 text-left hover:bg-gray-50 transition-colors duration-200"
+                aria-expanded="false"
+                aria-controls={`faq-answer-${index}`}
+              >
+                <span class="text-lg font-medium text-gray-900">{faq.question}</span>
+                <svg class="faq-icon h-5 w-5 text-gray-500 transform transition-transform duration-200 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div id={`faq-answer-${index}`} class="faq-content hidden px-6 pb-4">
+                <p class="text-gray-600">{faq.answer}</p>
+              </div>
             </div>
-          </div>
-          
-          <div class="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden" data-aos="fade-up">
-            <button class="faq-button flex justify-between items-center w-full px-6 py-4 text-left hover:bg-gray-50 transition-colors duration-200">
-              <span class="text-lg font-medium text-gray-900">How does the consulting process work?</span>
-              <svg class="faq-icon h-5 w-5 text-gray-500 transform transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            <div class="faq-content hidden px-6 pb-4">
-              <p class="text-gray-600">
-                Our consulting process includes: 1) Initial information exchange; 2) Preliminary operational assessment; 3) Identification of priority areas; 4) Written findings and recommendations; 5) Follow-up and potential implementation planning.
-              </p>
-            </div>
-          </div>
-          
-          <div class="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden" data-aos="fade-up">
-            <button class="faq-button flex justify-between items-center w-full px-6 py-4 text-left hover:bg-gray-50 transition-colors duration-200">
-              <span class="text-lg font-medium text-gray-900">Do you serve only companies or also the public sector?</span>
-              <svg class="faq-icon h-5 w-5 text-gray-500 transform transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            <div class="faq-content hidden px-6 pb-4">
-              <p class="text-gray-600">
-                We serve both the private and public sectors. Our approach is personalized to meet the specific needs of each sector and client.
-              </p>
-            </div>
-          </div>
-          
-          <div class="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden" data-aos="fade-up">
-            <button class="faq-button flex justify-between items-center w-full px-6 py-4 text-left hover:bg-gray-50 transition-colors duration-200">
-              <span class="text-lg font-medium text-gray-900">How are training and courses conducted?</span>
-              <svg class="faq-icon h-5 w-5 text-gray-500 transform transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            <div class="faq-content hidden px-6 pb-4">
-              <p class="text-gray-600">
-                Initially, we will offer training only in online format. In-person courses can be conducted at the client's location, while online training will be conducted on our own platform, with complete educational materials and completion certificates.
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
@@ -302,23 +211,19 @@ import WaveBotton from '../components/WaveBotton.astro';
 </Layout>
 
 <script>
-  // FAQ accordion functionality
   document.addEventListener('DOMContentLoaded', () => {
-    const faqButtons = document.querySelectorAll('.faq-button');
-    
-    faqButtons.forEach(button => {
+    const faqButtons = document.querySelectorAll<HTMLButtonElement>('.faq-button');
+
+    faqButtons.forEach((button) => {
       button.addEventListener('click', () => {
         const content = button.nextElementSibling;
         const icon = button.querySelector('.faq-icon');
-        
-        // Toggle content visibility
+        const isOpen = button.getAttribute('aria-expanded') === 'true';
+
         if (content) {
           content.classList.toggle('hidden');
-          
-          // Toggle icon rotation
-          if (icon) {
-            icon.classList.toggle('rotate-180');
-          }
+          button.setAttribute('aria-expanded', String(!isOpen));
+          icon?.classList.toggle('rotate-180');
         }
       });
     });
