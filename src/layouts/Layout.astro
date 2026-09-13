@@ -35,10 +35,10 @@ const {
     <!-- AOS Animation Library -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
-  <body class="bg-white text-gray-800 min-h-screen flex flex-col overflow-x-hidden">
+  <body class="bg-white text-gray-800 min-h-screen flex flex-col">
     <Navbar />
     
-    <main class="flex-grow">
+    <main class="flex-grow overflow-x-hidden">
       <slot />
     </main>
     
@@ -62,7 +62,6 @@ const {
     font-family: 'Inter', system-ui, sans-serif;
     line-height: 1.5;
     max-width: 100%;
-    overflow-x: clip;
   }
 
   h1, h2, h3, h4, h5, h6 {
