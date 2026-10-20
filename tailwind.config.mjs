@@ -98,7 +98,10 @@ export default {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         heading: ['Montserrat', 'system-ui', 'sans-serif'],
-      }
+      },
+      maxWidth: {
+        '7.5xl': '84rem',
+      },
     },
   },
   plugins: [],

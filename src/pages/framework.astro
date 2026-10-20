@@ -3,15 +3,6 @@ import Layout from '../layouts/Layout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import Button from '../components/Button.astro';
 import WaveBotton from '../components/WaveBotton.astro';
-
-const evaluationDomains = [
-  { label: 'Operational Impact', color: 'border-sky-500' },
-  { label: 'Service Reliability', color: 'border-orange-500' },
-  { label: 'Monitoring Capability', color: 'border-lime-600' },
-  { label: 'Operational Efficiency', color: 'border-teal-600' },
-  { label: 'Implementation Feasibility', color: 'border-slate-500' },
-  { label: 'Long-Term Operational Sustainability', color: 'border-fuchsia-700' },
-];
 ---
 
 <Layout
@@ -47,61 +38,42 @@ const evaluationDomains = [
   </section>
 
   <!-- ─── What is the Framework? ───────────────────────────── -->
-  <section class="py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-
-        <div data-aos="fade-right">
-          <SectionHeading
-            title="What is the EGM Water Operational Framework?"
-            subtitle=""
-          />
-          <p class="text-gray-600 mb-6 leading-relaxed">
-            The EGM Water Operational Framework is a structured, practical approach developed to help water utilities identify operational gaps, prioritize improvements, and implement effective changes — informed by practical water utility operating experience and structured operational analysis.
-          </p>
-          <p class="text-gray-600 mb-6 leading-relaxed">
-            It bridges the gap between operational knowledge and structured decision support, providing a clear path from assessment to sustainable improvement without prescribing a single "one-size-fits-all" solution.
-          </p>
-          <p class="text-gray-600 leading-relaxed">
-            Whether the challenge is water loss, inadequate monitoring, operational inefficiency, or readiness for automation, the framework provides the structure to address it systematically.
-          </p>
-        </div>
-
-        <div class="relative" data-aos="fade-left">
-          <div class="sm:hidden rounded-xl bg-white p-5 shadow-xl border border-gray-100">
-            <p class="text-center text-lg font-bold text-gray-900 mb-4">Six Evaluation Domains</p>
-            <div class="grid grid-cols-2 gap-3">
-              {evaluationDomains.map((domain) => (
-                <div class={`rounded-lg border-l-4 bg-gray-50 p-3 ${domain.color}`}>
-                  <span class="text-sm font-semibold leading-snug text-gray-800">{domain.label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          <img
-            src="/egm-water-framework-domains.svg"
-            alt="Six EWOF evaluation domains: Operational Impact, Service Reliability, Monitoring Capability, Operational Efficiency, Implementation Feasibility, and Long-Term Operational Sustainability"
-            class="hidden sm:block rounded-xl shadow-xl w-full"
-          />
-          <p class="mt-4 text-center text-sm text-gray-500">
-            Six evaluation domains support structured comparison throughout the operational improvement cycle.
-          </p>
-        </div>
-
+  <section class="pt-2 pb-20">
+    <div class="max-w-7.5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Desktop: imagem única -->
+      <div class="hidden sm:flex justify-center" data-aos="fade-up">
+        <img
+          src="/egm-water-framework-domains2.png"
+          alt="What is the EGM Water Operational Framework"
+          class="rounded-xl shadow-xl w-full h-auto"
+        />
+      </div>
+      <!-- Mobile: duas imagens empilhadas -->
+      <div class="sm:hidden flex flex-col gap-4" data-aos="fade-up">
+        <img
+          src="/framework-design-respon1.png"
+          alt="What is the EGM Water Operational Framework"
+          class="rounded-xl shadow-xl w-full h-auto"
+        />
+        <img
+          src="/framework-design-respon2.png"
+          alt="What is the EGM Water Operational Framework"
+          class="rounded-xl shadow-xl w-full h-auto"
+        />
       </div>
     </div>
   </section>
 
   <!-- ─── Core Principle ───────────────────────────────────── -->
-  <section class="py-16 bg-primary-600">
+  <!-- <section class="py-16 bg-primary-600">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <p class="text-primary-200 font-medium uppercase tracking-widest text-sm mb-4" data-aos="fade-up">Core Principle</p>
       <h2 class="text-3xl md:text-4xl font-bold text-white mb-10" data-aos="fade-up" data-aos-delay="100">
         The Continuous Improvement Cycle
-      </h2>
+      </h2> -->
 
       <!-- Cycle steps -->
-      <div class="flex flex-wrap justify-center items-center gap-2 md:gap-0" data-aos="fade-up" data-aos-delay="200">
+      <!-- <div class="flex flex-wrap justify-center items-center gap-2 md:gap-0" data-aos="fade-up" data-aos-delay="200">
         {[
           { label: 'Understand', icon: '🔍' },
           { label: 'Assess',     icon: '📊' },
@@ -122,9 +94,9 @@ const evaluationDomains = [
             )}
           </div>
         ))}
-      </div>
+      </div> -->
 
-      <p class="text-primary-100 mt-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="300">
+      <!-- <p class="text-primary-100 mt-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="300">
         The framework moves through six operational stages. After Learn, Repeat returns the process to Understand as conditions, evidence, and priorities evolve.
       </p>
       <div class="mt-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white" data-aos="fade-up" data-aos-delay="350">
@@ -132,7 +104,7 @@ const evaluationDomains = [
         <span>Repeat: return to Understand for the next cycle</span>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- ─── Six Operational Stages ───────────────────────────── -->
   <section class="py-20 bg-gray-50">
@@ -145,8 +117,8 @@ const evaluationDomains = [
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
 
-        <!-- Stage 1 -->
-        <div class="bg-white rounded-xl p-6 shadow-sm border-t-4 border-primary-500 hover:shadow-md transition-shadow duration-300" data-aos="fade-up">
+        <!-- Stage 1: Understand — azul escuro (igual ao card azul escuro do Print 1) -->
+        <div class="bg-white rounded-xl p-6 shadow-sm border-t-4 border-primary-700 hover:shadow-md transition-shadow duration-300" data-aos="fade-up">
           <div class="flex items-center mb-4">
             <span class="w-9 h-9 rounded-full bg-primary-100 text-primary-700 font-bold text-sm flex items-center justify-center mr-3 flex-shrink-0">01</span>
             <h3 class="text-lg font-bold text-gray-900">Understand</h3>
@@ -157,58 +129,58 @@ const evaluationDomains = [
           </p>
         </div>
 
-        <!-- Stage 2 -->
-        <div class="bg-white rounded-xl p-6 shadow-sm border-t-4 border-secondary-500 hover:shadow-md transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
+        <!-- Stage 2: Assess — azul médio/ciano (igual ao card azul médio do Print 1) -->
+        <div class="bg-white rounded-xl p-6 shadow-sm border-t-4 border-primary-500 hover:shadow-md transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
           <div class="flex items-center mb-4">
-            <span class="w-9 h-9 rounded-full bg-secondary-100 text-secondary-700 font-bold text-sm flex items-center justify-center mr-3 flex-shrink-0">02</span>
+            <span class="w-9 h-9 rounded-full bg-primary-100 text-primary-600 font-bold text-sm flex items-center justify-center mr-3 flex-shrink-0">02</span>
             <h3 class="text-lg font-bold text-gray-900">Assess</h3>
           </div>
-          <p class="text-sm font-semibold text-secondary-700 mb-2">What do we know, and what still needs checking?</p>
+          <p class="text-sm font-semibold text-primary-600 mb-2">What do we know, and what still needs checking?</p>
           <p class="text-gray-600 text-sm leading-relaxed">
             Organize relevant evidence, information-quality notes, uncertainties, and the expected operating condition when later comparison requires one.
           </p>
         </div>
 
-        <!-- Stage 3 -->
-        <div class="bg-white rounded-xl p-6 shadow-sm border-t-4 border-accent-500 hover:shadow-md transition-shadow duration-300" data-aos="fade-up" data-aos-delay="200">
+        <!-- Stage 3: Prioritize — teal/verde-azulado (igual ao card teal do Print 1) -->
+        <div class="bg-white rounded-xl p-6 shadow-sm border-t-4 border-secondary-500 hover:shadow-md transition-shadow duration-300" data-aos="fade-up" data-aos-delay="200">
           <div class="flex items-center mb-4">
-            <span class="w-9 h-9 rounded-full bg-accent-100 text-accent-700 font-bold text-sm flex items-center justify-center mr-3 flex-shrink-0">03</span>
+            <span class="w-9 h-9 rounded-full bg-secondary-100 text-secondary-600 font-bold text-sm flex items-center justify-center mr-3 flex-shrink-0">03</span>
             <h3 class="text-lg font-bold text-gray-900">Prioritize</h3>
           </div>
-          <p class="text-sm font-semibold text-accent-700 mb-2">What matters most right now?</p>
+          <p class="text-sm font-semibold text-secondary-600 mb-2">What matters most right now?</p>
           <p class="text-gray-600 text-sm leading-relaxed">
             State the priority and next decision based on local consequences, urgency, uncertainty, and authorized capacity.
           </p>
         </div>
 
-        <!-- Stage 4 -->
-        <div class="bg-white rounded-xl p-6 shadow-sm border-t-4 border-primary-400 hover:shadow-md transition-shadow duration-300" data-aos="fade-up" data-aos-delay="50">
+        <!-- Stage 4: Improve — teal (igual ao card teal do Print 1, mesma cor que Prioritize) -->
+        <div class="bg-white rounded-xl p-6 shadow-sm border-t-4 border-secondary-500 hover:shadow-md transition-shadow duration-300" data-aos="fade-up" data-aos-delay="50">
           <div class="flex items-center mb-4">
-            <span class="w-9 h-9 rounded-full bg-primary-50 text-primary-600 font-bold text-sm flex items-center justify-center mr-3 flex-shrink-0">04</span>
+            <span class="w-9 h-9 rounded-full bg-secondary-100 text-secondary-600 font-bold text-sm flex items-center justify-center mr-3 flex-shrink-0">04</span>
             <h3 class="text-lg font-bold text-gray-900">Improve</h3>
           </div>
-          <p class="text-sm font-semibold text-primary-700 mb-2">What's the next safe, authorized action?</p>
+          <p class="text-sm font-semibold text-secondary-600 mb-2">What's the next safe, authorized action?</p>
           <p class="text-gray-600 text-sm leading-relaxed">
             Execute the selected action within approved procedures, assigned authority, safeguards, and operating constraints.
           </p>
         </div>
 
-        <!-- Stage 5 -->
-        <div class="bg-white rounded-xl p-6 shadow-sm border-t-4 border-secondary-400 hover:shadow-md transition-shadow duration-300" data-aos="fade-up" data-aos-delay="150">
+        <!-- Stage 5: Verify — verde médio (igual ao card verde médio do Print 1) -->
+        <div class="bg-white rounded-xl p-6 shadow-sm border-t-4 border-accent-400 hover:shadow-md transition-shadow duration-300" data-aos="fade-up" data-aos-delay="150">
           <div class="flex items-center mb-4">
-            <span class="w-9 h-9 rounded-full bg-secondary-50 text-secondary-600 font-bold text-sm flex items-center justify-center mr-3 flex-shrink-0">05</span>
+            <span class="w-9 h-9 rounded-full bg-accent-100 text-accent-600 font-bold text-sm flex items-center justify-center mr-3 flex-shrink-0">05</span>
             <h3 class="text-lg font-bold text-gray-900">Verify</h3>
           </div>
-          <p class="text-sm font-semibold text-secondary-700 mb-2">Did it actually work?</p>
+          <p class="text-sm font-semibold text-accent-600 mb-2">Did it actually work?</p>
           <p class="text-gray-600 text-sm leading-relaxed">
             Use observed evidence to confirm whether the intended operating condition was achieved, including unexpected effects and the next disposition.
           </p>
         </div>
 
-        <!-- Stage 6 -->
-        <div class="bg-white rounded-xl p-6 shadow-sm border-t-4 border-accent-400 hover:shadow-md transition-shadow duration-300" data-aos="fade-up" data-aos-delay="250">
+        <!-- Stage 6: Learn — verde escuro (igual ao card verde escuro do Print 1) -->
+        <div class="bg-white rounded-xl p-6 shadow-sm border-t-4 border-secondary-600 hover:shadow-md transition-shadow duration-300" data-aos="fade-up" data-aos-delay="250">
           <div class="flex items-center mb-4">
-            <span class="w-9 h-9 rounded-full bg-accent-50 text-accent-600 font-bold text-sm flex items-center justify-center mr-3 flex-shrink-0">06</span>
+            <span class="w-9 h-9 rounded-full bg-secondary-100 text-secondary-700 font-bold text-sm flex items-center justify-center mr-3 flex-shrink-0">06</span>
             <h3 class="text-lg font-bold text-gray-900">Learn</h3>
           </div>
           
