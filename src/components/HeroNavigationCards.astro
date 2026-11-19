@@ -1,0 +1,55 @@
+---
+const cards = [
+  { label: 'Home', href: '/', image: '/nav-home.png' },
+  { label: 'About Us', href: '/about', image: '/nav-about.png' },
+  { label: 'Framework', href: '/framework', image: '/nav-framework.png' },
+  { label: 'Contact', href: '/contact', image: '/nav-contact.png' },
+  { label: 'Request Consultation', href: '/contact#consultation', image: '/nav-consultation.png' },
+];
+---
+
+<!-- Navigation is duplicated intentionally: these image cards complement the original top menu. -->
+<nav class="egm-featured-navigation" aria-label="Page navigation cards">
+  <div class="egm-featured-cards">
+    {cards.map((card) => (
+      <a class="egm-featured-card" href={card.href} aria-label={card.label} title={card.label}>
+        <img src={card.image} alt="" width="255" height="159" decoding="async" />
+        <span class="sr-only">{card.label}</span>
+      </a>
+    ))}
+  </div>
+</nav>
+
+<style>
+  .egm-featured-navigation {
+    position: relative; z-index: 20;
+    margin: -130px auto 0;
+    width: 100%; padding: 0 24px 4px;
+  }
+  .egm-featured-cards {
+    max-width: 1350px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 13px; align-items: stretch;
+  }
+  .egm-featured-card {
+    display: block; aspect-ratio: 246 / 148; min-width: 0;
+    border-radius: 12px; overflow: hidden;
+    box-shadow: 0 10px 19px rgba(4, 22, 40, .16);
+    background: transparent; transition: transform 180ms ease, box-shadow 180ms ease;
+  }
+  .egm-featured-card img { width: 100%; height: 100%; display: block; object-fit: cover; }
+  .egm-featured-card:hover { transform: translateY(-5px); box-shadow: 0 15px 25px rgba(4,22,40,.23); }
+  .egm-featured-card:focus-visible { outline: 3px solid #0ea5e9; outline-offset: 3px; }
+  @media (max-width: 900px) {
+    .egm-featured-navigation { margin-top: -70px; padding: 0 18px 4px; }
+    .egm-featured-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; max-width: 720px; }
+  }
+  @media (max-width: 580px) {
+    .egm-featured-navigation { margin-top: -48px; padding: 0 14px 4px; }
+    .egm-featured-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .egm-featured-card:last-child { grid-column: 1 / -1; width: calc(50% - 6px); justify-self: center; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .egm-featured-card { transition: none; }
+  }
+</style>

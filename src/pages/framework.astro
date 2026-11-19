@@ -3,15 +3,16 @@ import Layout from '../layouts/Layout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import Button from '../components/Button.astro';
 import WaveBotton from '../components/WaveBotton.astro';
+import HeroNavigationCards from '../components/HeroNavigationCards.astro';
 ---
 
 <Layout
   title="EGM Water Operational Framework"
-  description="A practical, adaptable framework for water utility operational improvement — covering monitoring, efficiency, automation, and continuous improvement."
+  description="The EGM Water Operational Framework (EWOF) connects an operating event to an authorized response, a verified outcome, and a record the next shift can use."
 >
 
   <!-- ─── Hero ─────────────────────────────────────────────── -->
-  <section class="bg-gray-900 text-white py-24 relative overflow-hidden">
+  <section class="bg-gray-900 text-white py-20 relative overflow-hidden">
     <div class="absolute inset-0 z-0">
       <video 
         src="/egm_instit_framework.mp4" 
@@ -25,17 +26,19 @@ import WaveBotton from '../components/WaveBotton.astro';
       <div class="absolute inset-0 bg-gradient-to-r from-primary-900/80 to-primary-800/60"></div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-24 md:py-36">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 md:py-28">
       <div class="max-w-3xl" data-aos="fade-up">
         <p class="text-primary-300 font-medium uppercase tracking-widest text-sm mb-4">Operational Decision Support</p>
         <h1 class="text-4xl md:text-5xl font-bold mb-6">EGM Water Operational Framework</h1>
         <p class="text-xl text-gray-300">
-          A Practical Framework for Water Utility Operational Improvement
+          A practical sequence that connects an operating event to an authorized response, a verified outcome, and a record the next shift can use.
         </p>
       </div>
     </div>
     <WaveBotton class="absolute bottom-0 left-0 right-0 text-white" />
   </section>
+
+  <!-- <HeroNavigationCards /> -->
 
   <!-- ─── What is the Framework? ───────────────────────────── -->
   <section class="pt-2 pb-20">
@@ -44,7 +47,7 @@ import WaveBotton from '../components/WaveBotton.astro';
       <div class="hidden sm:flex justify-center" data-aos="fade-up">
         <img
           src="/egm-water-framework-domains2.png"
-          alt="What is the EGM Water Operational Framework"
+          alt="EWOF cycle: Understand, Assess, Prioritize, Respond, Verify, and Learn, then Repeat. Flexible application: quick or urgent, structured or recurring, and progressive scaling."
           class="rounded-xl shadow-xl w-full h-auto"
         />
       </div>
@@ -52,12 +55,12 @@ import WaveBotton from '../components/WaveBotton.astro';
       <div class="sm:hidden flex flex-col gap-4" data-aos="fade-up">
         <img
           src="/framework-design-respon1.png"
-          alt="What is the EGM Water Operational Framework"
+          alt="EWOF cycle: Understand, Assess, Prioritize, Respond, Verify, and Learn, then Repeat."
           class="rounded-xl shadow-xl w-full h-auto"
         />
         <img
           src="/framework-design-respon2.png"
-          alt="What is the EGM Water Operational Framework"
+          alt="Flexible application of EWOF: quick or urgent, structured or recurring, and progressive scaling."
           class="rounded-xl shadow-xl w-full h-auto"
         />
       </div>
@@ -78,7 +81,7 @@ import WaveBotton from '../components/WaveBotton.astro';
           { label: 'Understand', icon: '🔍' },
           { label: 'Assess',     icon: '📊' },
           { label: 'Prioritize', icon: '🎯' },
-          { label: 'Improve',    icon: '🔧' },
+          { label: 'Respond',    icon: '🔧' },
           { label: 'Verify',     icon: '✅' },
           { label: 'Learn',      icon: '📘' },
         ].map((step, i, arr) => (
@@ -111,7 +114,7 @@ import WaveBotton from '../components/WaveBotton.astro';
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <SectionHeading
         title="Six Operational Stages"
-        subtitle="The stages provide a structured sequence for organizing evidence, decisions, actions, verification, and learning. Repeat returns the framework to the first stage for the next cycle."
+        subtitle="Six connected stages take a team from the first observation to a verified outcome and a record worth keeping. Repeat is not a seventh stage: it returns the team to Understand when conditions change or the problem comes back."
         centered={true}
       />
 
@@ -125,7 +128,7 @@ import WaveBotton from '../components/WaveBotton.astro';
           </div>
           <p class="text-sm font-semibold text-primary-700 mb-2">What's happening, and what needs attention?</p>
           <p class="text-gray-600 text-sm leading-relaxed">
-            Define the condition, possible impact, operational context, authority, constraints, and immediate information gaps.
+            State what was observed separately from any diagnosis: the asset, location, time, operating mode, possible service impact, and who has authority to respond.
           </p>
         </div>
 
@@ -137,7 +140,7 @@ import WaveBotton from '../components/WaveBotton.astro';
           </div>
           <p class="text-sm font-semibold text-primary-600 mb-2">What do we know, and what still needs checking?</p>
           <p class="text-gray-600 text-sm leading-relaxed">
-            Organize relevant evidence, information-quality notes, uncertainties, and the expected operating condition when later comparison requires one.
+            Bring together the evidence needed for the next decision, such as SCADA trends, alarms, maintenance records, and field observations, and note how reliable each item is.
           </p>
         </div>
 
@@ -149,19 +152,19 @@ import WaveBotton from '../components/WaveBotton.astro';
           </div>
           <p class="text-sm font-semibold text-secondary-600 mb-2">What matters most right now?</p>
           <p class="text-gray-600 text-sm leading-relaxed">
-            State the priority and next decision based on local consequences, urgency, uncertainty, and authorized capacity.
+            Decide what comes first based on safety, water quality, service continuity, and urgency, using the utility's own risk and escalation rules.
           </p>
         </div>
 
-        <!-- Stage 4: Improve — teal (igual ao card teal do Print 1, mesma cor que Prioritize) -->
+        <!-- Stage 4: Respond — teal (igual ao card teal do Print 1, mesma cor que Prioritize) -->
         <div class="bg-white rounded-xl p-6 shadow-sm border-t-4 border-secondary-500 hover:shadow-md transition-shadow duration-300" data-aos="fade-up" data-aos-delay="50">
           <div class="flex items-center mb-4">
             <span class="w-9 h-9 rounded-full bg-secondary-100 text-secondary-600 font-bold text-sm flex items-center justify-center mr-3 flex-shrink-0">04</span>
-            <h3 class="text-lg font-bold text-gray-900">Improve</h3>
+            <h3 class="text-lg font-bold text-gray-900">Respond</h3>
           </div>
           <p class="text-sm font-semibold text-secondary-600 mb-2">What's the next safe, authorized action?</p>
           <p class="text-gray-600 text-sm leading-relaxed">
-            Execute the selected action within approved procedures, assigned authority, safeguards, and operating constraints.
+            Carry out the response within approved procedures and assigned authority. Record who authorized it, who performed it, and the result expected.
           </p>
         </div>
 
@@ -173,7 +176,7 @@ import WaveBotton from '../components/WaveBotton.astro';
           </div>
           <p class="text-sm font-semibold text-accent-600 mb-2">Did it actually work?</p>
           <p class="text-gray-600 text-sm leading-relaxed">
-            Use observed evidence to confirm whether the intended operating condition was achieved, including unexpected effects and the next disposition.
+            Compare what was observed after the response with the result expected. A sent command or a cleared alarm is not proof that the operating condition was restored.
           </p>
         </div>
 
@@ -183,9 +186,9 @@ import WaveBotton from '../components/WaveBotton.astro';
             <span class="w-9 h-9 rounded-full bg-secondary-100 text-secondary-700 font-bold text-sm flex items-center justify-center mr-3 flex-shrink-0">06</span>
             <h3 class="text-lg font-bold text-gray-900">Learn</h3>
           </div>
-          
+          <p class="text-sm font-semibold text-secondary-700 mb-2">What does the next shift need to know?</p>
           <p class="text-gray-600 text-sm leading-relaxed">
-            Retain a concise asset-linked event record, unresolved issue, lesson, or trigger for structured review.
+            Keep a short, asset-linked record that states three things separately: whether service was stabilized, whether the cause was identified, and whether the correction was verified. Open items get an owner.
           </p>
         </div>
 
@@ -198,7 +201,7 @@ import WaveBotton from '../components/WaveBotton.astro';
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <SectionHeading
         title="Areas of Application"
-        subtitle="The framework can support evaluation across selected areas of water utility operations, adapted to local conditions, available evidence, and utility authority."
+        subtitle="The same sequence applies across water utility operations, adapted to local conditions, available evidence, and the utility's own authority and procedures."
         centered={true}
       />
 
@@ -308,6 +311,57 @@ import WaveBotton from '../components/WaveBotton.astro';
       </div>
     </div>
   </section> -->
+
+  <!-- ─── Guidance We Build On ─────────────────────────────── -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="Guidance We Build On"
+        subtitle="EWOF is designed to work alongside established U.S. water-sector guidance. These public resources are a useful starting point for any utility."
+        centered={true}
+      />
+
+      <div class="max-w-4xl mx-auto mt-4 space-y-4">
+        {[
+          {
+            title: 'Effective Utility Management: A Primer for Water Sector Utilities',
+            source: 'U.S. EPA and water-sector partners',
+            body: 'Management attributes, performance measures, and continuous improvement. EWOF applies the same thinking at the level of a single operating decision.',
+            url: 'https://www.epa.gov/sustainable-water-infrastructure/effective-water-utility-management-practices',
+          },
+          {
+            title: 'Incident Action Checklists for Water Utilities',
+            source: 'U.S. EPA',
+            body: 'Preparedness, response, and recovery steps by incident type. EWOF follows the utility\'s own procedures and adds a consistent record of what was decided and verified.',
+            url: 'https://www.epa.gov/waterutilityresponse/incident-action-checklists-water-utilities',
+          },
+          {
+            title: 'Successfully Protecting Your Investment in Drinking Water Infrastructure',
+            source: 'U.S. EPA',
+            body: 'Asset-management practices from communities and local experts. Asset-linked event records from EWOF can inform the next asset review.',
+            url: 'https://www.epa.gov/sites/default/files/2017-07/documents/asset_management_fact_sheets_20170602.pdf',
+          },
+        ].map((item, i) => (
+          <a
+            href={item.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block bg-white rounded-xl p-6 shadow-sm border-l-4 border-primary-500 hover:shadow-md transition-shadow duration-300"
+            data-aos="fade-up"
+            data-aos-delay={`${i * 75}`}
+          >
+            <p class="text-sm font-semibold text-primary-700 mb-1">External reading · {item.source}</p>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">{item.body}</p>
+          </a>
+        ))}
+      </div>
+
+      <p class="max-w-3xl mx-auto mt-8 text-center text-sm text-gray-500" data-aos="fade-up">
+        These resources are published by their respective organizations. EGM Water TechSol is not affiliated with or endorsed by the U.S. EPA.
+      </p>
+    </div>
+  </section>
 
   <!-- ─── CTA ──────────────────────────────────────────────── -->
   <section class="bg-primary-600 py-16">

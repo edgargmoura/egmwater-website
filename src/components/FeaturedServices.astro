@@ -7,28 +7,24 @@ const services = [
     title: 'Operational Assessment & Optimization',
     description: 'Structured assessment of water utility operations to identify operational limitations, monitoring gaps, recurring issues, and practical improvement opportunities.',
     image: '/projetos_infraestrutura-4.png',
-    url: '/contact#consultation',
     highlight: 'slate'
   },
   {
     title: 'Automation & Operational Monitoring',
     description: 'Evaluation and improvement of monitoring and automation strategies to support operational visibility, timely response, and more consistent decision-making.',
     image: '/automação_monitoramento.png',
-    url: '/contact#consultation',
     highlight: 'gray'
   },
   {
     title: 'Water Loss & Operational Efficiency',
     description: 'Operational assessment focused on identifying opportunities to improve system efficiency, monitoring practices, pressure-related operations, and water-loss management.',
-    image: '/tecnologias_verdes.png',
-    url: '/contact#consultation',
+    image: '/water_loss_image.png',
     highlight: 'zinc'
   },
   {
     title: 'Training, Documentation & Knowledge Transfer',
     description: "Role-appropriate workshops, operating-document review, and knowledge-transfer support defined around the utility's procedures, responsibilities, and agreed scope.",
-    image: 'https://images.pexels.com/photos/1181533/pexels-photo-1181533.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&dpr=1',
-    url: '/contact#consultation',
+    image: 'knowledge_transfer_image.png',
     highlight: 'stone'
   },
 ];
@@ -48,7 +44,6 @@ const services = [
           title={service.title}
           description={service.description}
           image={service.image}
-          url={service.url}
           highlight={service.highlight}
         />
       ))}

@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import ContactForm from '../components/ContactForm.astro';
 import WaveBotton from '../components/WaveBotton.astro';
+import HeroNavigationCards from '../components/HeroNavigationCards.astro';
 
 const serviceAreas = [
   {
@@ -20,6 +21,41 @@ const serviceAreas = [
   {
     location: 'Alabama',
     status: 'Planned service area',
+  },
+];
+
+const audiences = [
+  {
+    name: 'Municipal and government agencies',
+    need: 'Operational assessments, monitoring strategy, and decision support for public water and wastewater systems.',
+  },
+  {
+    name: 'Private water and sanitation companies',
+    need: 'Support for treatment plant and network operations, maintenance practices, and operational efficiency.',
+  },
+  {
+    name: 'Industrial facilities',
+    need: 'Assessment of process water, reuse, and wastewater operations in manufacturing, chemical, and construction settings.',
+  },
+  {
+    name: 'Technology companies',
+    need: 'Operational know-how for partners developing monitoring, IoT, and automation products for the water sector.',
+  },
+  {
+    name: 'Universities and research centers',
+    need: 'Collaboration on applied research in water treatment and operations, shared through publications and conferences.',
+  },
+  {
+    name: 'Environmental NGOs',
+    need: 'Technical partnership on water and sanitation initiatives, with attention to underserved communities.',
+  },
+  {
+    name: 'Operators and engineers',
+    need: 'Workshops and knowledge transfer on operating practices, system maintenance, and operational decision-making.',
+  },
+  {
+    name: 'Chemistry professionals and students',
+    need: 'Practical training in water quality analysis and treatment processes.',
   },
 ];
 
@@ -56,7 +92,7 @@ const faqs = [
   title="Contact"
   description="Contact EGM Water TechSol to discuss water utility operational assessment, monitoring, automation, efficiency, or the EGM Water Operational Framework."
 >
-  <section class="bg-gray-900 text-white py-24 relative overflow-hidden">
+  <section class="bg-gray-900 text-white py-20 relative overflow-hidden">
     <div class="absolute inset-0 z-0">
       <video
         src="/typing.mp4"
@@ -70,16 +106,18 @@ const faqs = [
       <div class="absolute inset-0 bg-gradient-to-r from-primary-800/70 to-primary-800/70"></div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-24 md:py-36">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 md:py-28">
       <div class="max-w-3xl" data-aos="fade-up">
         <h1 class="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
         <p class="text-xl text-gray-300">
-          Let's discuss your utility's operational challenges and explore practical opportunities for monitoring, efficiency, automation, and continuous improvement.
+          Tell us about your utility's operational challenge. We will help you identify a practical next step in monitoring, efficiency, automation, or continuous improvement.
         </p>
       </div>
     </div>
     <WaveBotton />
   </section>
+
+  <!-- <HeroNavigationCards /> -->
 
   <section class="py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -140,7 +178,7 @@ const faqs = [
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <SectionHeading
         title="Request a Consultation"
-        subtitle="Provide a brief description of the operational topic or question, and we will respond as soon as possible."
+        subtitle="Briefly describe the operational topic or question. We will reply with any clarifying questions and a suggested next step."
         centered={true}
       />
       <ContactForm />
@@ -148,6 +186,29 @@ const faqs = [
   </section>
 
   <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="Who We Serve"
+        subtitle="Water touches public agencies, industry, and research alike. Each group comes to us for a different reason."
+        centered={true}
+      />
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+        {audiences.map((audience, index) => (
+          <div
+            class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 border-t-4 border-t-primary-500 hover:shadow-md transition-shadow duration-300"
+            data-aos="fade-up"
+            data-aos-delay={(index % 4) * 75}
+          >
+            <h3 class="text-lg font-semibold mb-3 text-gray-900">{audience.name}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">{audience.need}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <SectionHeading
         title="Planned Service Areas"
@@ -176,7 +237,7 @@ const faqs = [
     </div>
   </section>
 
-  <section class="py-20 bg-gray-50">
+  <section class="py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <SectionHeading
         title="Frequently Asked Questions"

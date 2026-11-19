@@ -1,0 +1,16 @@
+EGM Water TechSol — CORREÇÃO 2 (08/11/2026)
+
+Inclui:
+1. Cinco cards sem a moldura/fundo duplicado.
+2. Botões extras removidos apenas do destaque da página Home.
+3. Arte Lone Star com transparência: sem retângulo branco cortando o vídeo.
+4. Menu superior e link Request Consultation preservados.
+
+COMO APLICAR:
+- Guarde uma cópia de segurança do projeto.
+- Extraia este ZIP na RAIZ do projeto Astro original, substituindo os arquivos existentes.
+- Verifique as páginas Home, About Us, Framework e Contact.
+- Recompile: npm run build
+- Confira o formulário antes de publicar.
+
+O pacote não inclui `.env` nem credenciais. O site em produção NÃO foi alterado.

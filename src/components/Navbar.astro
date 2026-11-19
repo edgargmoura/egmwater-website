@@ -7,38 +7,40 @@ const navItems = [
 ];
 ---
 
-<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm">
+<header class="egm-site-header sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+  <!-- The exact Lone Star / Texas art from the approved mockup. Decorative only. -->
+  <!-- <img src="/egm-lone-star-blue-header.png" alt="" aria-hidden="true" class="egm-texas-header-art" width="258" height="88" /> -->
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between h-20">
       <div class="flex-shrink-0 flex items-center">
         <a href="/" class="flex min-w-0 items-center gap-2 sm:gap-3">
-          <img 
-            src="/logo_egmwatertechsol.png" 
-            alt="EGM Water TechSol Logo" 
+          <img
+            src="/logo_egmwatertechsol.png"
+            alt="EGM Water TechSol Logo"
             class="h-24 w-auto flex-shrink-0 sm:h-28 md:h-32"
           />
-          <span class="hidden text-primary-600 font-heading font-bold text-2xl whitespace-nowrap xl:inline">EGM Water TechSol</span>
+          <span class="egm-brand-text hidden text-primary-600 font-heading font-bold text-2xl whitespace-nowrap 2xl:inline">EGM Water TechSol</span>
         </a>
       </div>
-      
+
       <!-- Desktop Menu -->
-      <nav class="hidden lg:flex items-center space-x-4">
+      <nav class="egm-desktop-nav hidden lg:flex items-center space-x-4" aria-label="Main navigation">
         {navItems.map(item => (
-          <a 
-            href={item.url} 
+          <a
+            href={item.url}
             class="px-3 py-2 text-gray-700 hover:text-primary-600 font-medium text-sm transition-colors duration-200"
           >
             {item.name}
           </a>
         ))}
-        <a 
-          href="/contact#consultation" 
+        <a
+          href="/contact#consultation"
           class="ml-4 px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white rounded-md font-medium text-sm transition-colors duration-200"
         >
           Request Consultation
         </a>
       </nav>
-      
+
       <!-- Mobile menu button -->
       <div class="lg:hidden flex flex-shrink-0 items-center">
         <button
@@ -56,20 +58,20 @@ const navItems = [
       </div>
     </div>
   </div>
-  
+
   <!-- Mobile Menu -->
   <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-200">
     <div class="px-2 pt-2 pb-3 space-y-1">
       {navItems.map(item => (
-        <a 
-          href={item.url} 
+        <a
+          href={item.url}
           class="block px-3 py-2 text-gray-700 hover:text-primary-600 font-medium text-base"
         >
           {item.name}
         </a>
       ))}
-      <a 
-        href="/contact#consultation" 
+      <a
+        href="/contact#consultation"
         class="block mt-4 px-3 py-2 bg-primary-500 hover:bg-primary-600 text-white rounded-md font-medium text-base"
       >
         Request Consultation
@@ -82,7 +84,7 @@ const navItems = [
   // Mobile menu toggle
   const mobileMenuButton = document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
-  
+
   if (mobileMenuButton && mobileMenu) {
     mobileMenuButton.addEventListener('click', () => {
       const isOpen = mobileMenuButton.getAttribute('aria-expanded') === 'true';
@@ -92,3 +94,31 @@ const navItems = [
     });
   }
 </script>
+
+
+<!-- <style>
+  .egm-site-header { position: sticky; isolation: isolate; }
+  .egm-site-header > div { position: relative; z-index: 2; }
+  .egm-texas-header-art {
+    position: absolute; top: 1px; right: 280px;
+    width: 258px; height: 80px; object-fit: contain;
+    object-position: center; pointer-events: none; z-index: 1; background: transparent;
+  }
+  @media (min-width: 1536px) {
+    .egm-desktop-nav { margin-right: 215px; }
+  }
+  @media (min-width: 1280px) and (max-width: 1535px) {
+    .egm-texas-header-art { width: 175px; height: 68px; right: 10px; top: 5px; }
+    .egm-desktop-nav { margin-right: 150px; }
+  }
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    .egm-texas-header-art { width: 105px; height: 62px; right: 6px; top: 7px; }
+    .egm-desktop-nav { margin-right: 95px; }
+  }
+  @media (max-width: 1023px) {
+    .egm-texas-header-art { width: min(32vw, 162px); height: 60px; right: 74px; top: 10px; }
+  }
+  @media (max-width: 380px) {
+    .egm-texas-header-art { width: 95px; right: 54px; }
+  }
+</style> -->

@@ -1,13 +1,18 @@
+
 ---
 export interface Props {
   title: string;
   description: string;
   image: string;
-  url: string;
   highlight?: 'gray' | 'slate' | 'zinc' | 'stone' | 'neutral';
 }
 
-const { title, description, image, url, highlight = 'gray' } = Astro.props;
+const {
+  title,
+  description,
+  image,
+  highlight = 'gray'
+} = Astro.props;
 
 const highlightColors = {
   gray: 'border-gray-300 bg-gray-50/30',
@@ -20,26 +25,25 @@ const highlightColors = {
 const highlightClass = highlightColors[highlight];
 ---
 
-<a 
-  href={url} 
-  class={`group flex flex-col h-full bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border-l-2 ${highlightClass}`}
+<div
+  class={`flex flex-col h-full bg-white rounded-xl overflow-hidden shadow-sm border-l-2 ${highlightClass}`}
   data-aos="fade-up"
 >
   <div class="relative h-56 overflow-hidden flex items-center justify-center">
-    <img 
-      src={image} 
-      alt={title} 
-      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+    <img
+      src={image}
+      alt={title}
+      class="w-full h-full object-cover"
     />
   </div>
-  
+
   <div class="p-6 flex-grow text-center">
-    <h3 class="text-xl font-semibold mb-3 text-gray-900 group-hover:text-primary-600 transition-colors duration-200">
+    <h3 class="text-xl font-semibold mb-3 text-gray-900">
       {title}
     </h3>
-    
+
     <p class="text-gray-600 text-base">
       {description}
     </p>
   </div>
-</a>
+</div>
