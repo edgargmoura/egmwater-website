@@ -197,37 +197,109 @@ import HeroNavigationCards from '../components/HeroNavigationCards.astro';
   </section>
 
   <!-- ─── Areas of Application ─────────────────────────────── -->
-  <section class="py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <SectionHeading
-        title="Areas of Application"
-        subtitle="The same sequence applies across water utility operations, adapted to local conditions, available evidence, and the utility's own authority and procedures."
-        centered={true}
-      />
+  
+<!-- ─── Areas of Application ─── -->
+<section
+  class="py-20"
+  style="--foto-altura: 160px; --foto-zoom: 1;"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
-        {[
-          { label: 'Water Treatment Operations',        icon: '💧' },
-          { label: 'Pumping Stations',                  icon: '⚙️' },
-          { label: 'Reservoir Operations',              icon: '🏞️' },
-          { label: 'Distribution Systems',              icon: '🗺️' },
-          { label: 'Operational Monitoring',            icon: '📡' },
-          { label: 'Water Loss & Efficiency',           icon: '📉' },
-          { label: 'Water Scarcity / Operational Stress', icon: '⚠️' },
-          { label: 'Automation-Readiness Assessment',   icon: '🔌' },
-        ].map((area, i) => (
+    <SectionHeading
+      title="Areas of Application"
+      subtitle="The framework can support evaluation across selected areas of water utility operations, adapted to local conditions, available evidence, and utility authority."
+      centered={true}
+    />
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 mt-5">
+
+      {[
+        {
+          label: 'Water Treatment Operations',
+          image: '/app_water_treat.png',
+          alt: 'Agitadores em tanque de floculação',
+          icon: null,
+          position: 'center 55%'
+        },
+        {
+          label: 'Pumping Stations',
+          image: '/app_pump_station.png',
+          alt: 'Casa de bombas com conjuntos motobomba',
+          icon: null,
+          position: 'center'
+        },
+        {
+          label: 'Reservoir Operations',
+          image: '/app_reserv.png',
+          alt: 'Vista aérea de reservatório metálico',
+          icon: null,
+          position: 'center'
+        },
+        {
+          label: 'Operational Monitoring',
+          image: '/app_telemetri.png',
+          alt: 'Sala de controle e telemetria',
+          icon: null,
+          position: 'center 40%'
+        },
+        {
+          label: 'Water Loss & Efficiency',
+          image: '/app_water_loss.png',
+          alt: '',
+          icon: null,
+          position: 'center'
+        }
+      ].map((area, i) => (
+
+        <article
+          class="overflow-hidden rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-300"
+          data-aos="fade-up"
+          data-aos-delay={`${(i % 4) * 75}`}
+        >
+
           <div
-            class="bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:border-primary-300 hover:shadow-md transition-all duration-300 flex flex-col items-center text-center"
-            data-aos="fade-up"
-            data-aos-delay={`${(i % 4) * 75}`}
+            class="w-full overflow-hidden bg-slate-100"
+            style="height: var(--foto-altura);"
           >
-            <span class="text-3xl mb-3">{area.icon}</span>
-            <span class="text-gray-800 font-medium text-sm leading-snug">{area.label}</span>
+
+            {area.image ? (
+              <img
+                src={area.image}
+                alt={area.alt}
+                width="1200"
+                height="675"
+                loading="lazy"
+                decoding="async"
+                class="w-full h-full object-cover"
+                style={`object-position: ${area.position}; transform: scale(var(--foto-zoom));`}
+              />
+            ) : (
+              <div class="w-full h-full flex items-center justify-center bg-sky-50">
+                <span
+                  class="text-5xl"
+                  aria-hidden="true"
+                >
+                  {area.icon}
+                </span>
+              </div>
+            )}
+
           </div>
-        ))}
-      </div>
+
+          <div class="min-h-[72px] px-4 py-4 flex items-center justify-center">
+            <h3 class="text-[15px] font-semibold text-slate-800 text-center leading-snug">
+              {area.label}
+            </h3>
+          </div>
+
+        </article>
+
+      ))}
+
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- ─── Technology's Role ─────────────────────────────────── -->
   <!-- <section class="py-20 bg-gray-50">
